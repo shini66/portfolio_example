@@ -2,10 +2,165 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Tailwind 4 + PostCSS</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portafolio — Full Stack Developer</title>
+  <!-- Material Symbols (Google) for UI icons - enlace simplificado -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <!-- Font Awesome (CDN) for brand & utility icons (sin integrity para evitar bloqueo si el hash no coincide) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="../dist/style.css">
+  <!-- Fallback CSS: aplica variantes 'dark' por clase cuando Tailwind generó variantes por media query -->
 </head>
-<body class="bg-gray-100 p-10">
-  <h1 class="text-3xl font-bold text-blue-600">Tailwind 4 funcionando ✔</h1>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-md text-gray-800 flex items-center justify-center font-bold">FP</div>
+        <span class="font-semibold">FullStack Pro</span>
+      </a>
+
+      <div class="flex items-center gap-4">
+        <nav class="hidden md:flex gap-4 text-sm">
+          <a href="#about" class="hover:underline">Sobre mí</a>
+          <a href="#projects" class="hover:underline">Proyectos</a>
+          <a href="#contact" class="hover:underline">Contacto</a>
+        </nav>
+
+        <button id="mobile-menu-button" class="md:hidden p-2 rounded-md bg-gray-100" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú móvil">
+          <span class="material-symbols-outlined text-[24px]" style="color: currentColor;">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-menu" class="md:hidden hidden border-t border-gray-100" aria-hidden="true">
+      <div class="px-6 py-4 flex flex-col gap-2">
+        <a href="#about" class="py-2">Sobre mí</a>
+        <a href="#projects" class="py-2">Proyectos</a>
+        <a href="#contact" class="py-2">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-12">
+
+    <!-- 1) Developer info -->
+    <section id="developer" class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+        <div class="md:col-span-1 flex justify-center md:justify-start">
+        <img src="./assets/avatar.svg" alt="Avatar" class="w-44 h-44 rounded-lg object-cover shadow-md" />
+      </div>
+      <div class="md:col-span-2">
+        <h2 class="text-3xl font-extrabold">Juan Pérez</h2>
+        <p class="mt-3 text-muted">Desarrollador Full Stack con experiencia en construir aplicaciones web escalables. Me especializo en Node.js, bases de datos, APIs REST/GraphQL y frontends accesibles con buenas prácticas de rendimiento.</p>
+
+        <div class="mt-4 flex flex-wrap gap-3">
+          <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">Open Source</span>
+          <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">TDD</span>
+          <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">Cloud</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) Languages / Technologies -->
+    <section id="languages" class="mt-12">
+      <h2 class="text-2xl font-semibold">Lenguajes y Tecnologías</h2>
+      <p class="mt-2 text-muted">Herramientas y stacks que uso con regularidad.</p>
+
+      <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <!-- Iconify icons with tooltips -->
+        <div class="p-4 border rounded-md flex items-center justify-center">
+          <button class="group relative flex flex-col items-center focus:outline-none" aria-label="JavaScript" tabindex="0">
+            <i class="fa-brands fa-js text-yellow-500" style="font-size:48px;" aria-hidden="true"></i>
+            <span class="sr-only">JavaScript</span>
+            <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 pointer-events-none transition-opacity duration-150">
+              <div class="bg-gray-800 text-white text-xs rounded py-1 px-2">JavaScript</div>
+            </div>
+          </button>
+        </div>
+
+        <div class="p-4 border rounded-md flex items-center justify-center">
+          <button class="group relative flex flex-col items-center focus:outline-none" aria-label="Node.js" tabindex="0">
+            <i class="fa-brands fa-node-js text-green-600" style="font-size:48px;" aria-hidden="true"></i>
+            <span class="sr-only">Node.js</span>
+            <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 pointer-events-none transition-opacity duration-150">
+              <div class="bg-gray-800 text-white text-xs rounded py-1 px-2">Node.js</div>
+            </div>
+          </button>
+        </div>
+
+        <div class="p-4 border rounded-md flex items-center justify-center">
+          <button class="group relative flex flex-col items-center focus:outline-none" aria-label="Databases" tabindex="0">
+            <i class="fa-solid fa-database text-indigo-500" style="font-size:48px;" aria-hidden="true"></i>
+            <span class="sr-only">Databases</span>
+            <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 pointer-events-none transition-opacity duration-150">
+              <div class="bg-gray-800 text-white text-xs rounded py-1 px-2">Databases</div>
+            </div>
+          </button>
+        </div>
+
+        <div class="p-4 border rounded-md flex items-center justify-center">
+          <button class="group relative flex flex-col items-center focus:outline-none" aria-label="HTML & CSS" tabindex="0">
+            <i class="fa-brands fa-html5 text-pink-500" style="font-size:48px;" aria-hidden="true"></i>
+            <span class="sr-only">HTML &amp; CSS</span>
+            <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 pointer-events-none transition-opacity duration-150">
+              <div class="bg-gray-800 text-white text-xs rounded py-1 px-2">HTML &amp; CSS</div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) Projects -->
+    <section id="projects" class="mt-12">
+      <h2 class="text-2xl font-semibold">Proyectos</h2>
+      <p class="mt-2 text-muted">Algunos proyectos recientes presentados como tarjetas con imágenes.</p>
+
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <article class="border rounded-lg overflow-hidden bg-white shadow-sm">
+          <img src="./assets/project-1.svg" alt="Proyecto 1" class="w-full h-40 object-cover" />
+          <div class="p-4">
+            <h3 class="font-bold">Tienda API</h3>
+            <p class="mt-2 text-sm text-muted">API REST con productos, autenticación y pasarela de pagos.</p>
+            <div class="mt-3 flex gap-2">
+              <a class="text-sm underline" href="#">Código</a>
+              <a class="text-sm underline" href="#">Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="border rounded-lg overflow-hidden bg-white shadow-sm">
+          <img src="./assets/project-2.svg" alt="Proyecto 2" class="w-full h-40 object-cover" />
+          <div class="p-4">
+            <h3 class="font-bold">Dashboard Analítico</h3>
+            <p class="mt-2 text-sm text-muted">Visualizaciones en tiempo real y panel de administración.</p>
+            <div class="mt-3 flex gap-2">
+              <a class="text-sm underline" href="#">Código</a>
+              <a class="text-sm underline" href="#">Demo</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4) Contact form -->
+    <section id="contact" class="mt-12">
+      <h2 class="text-2xl font-semibold">Contacto</h2>
+      <p class="mt-3 text-muted">¿Tienes un proyecto en mente? Escríbeme.</p>
+
+      <form class="mt-4 grid grid-cols-1 gap-3" action="#" method="POST">
+        <input name="name" class="p-3 border rounded-md bg-white" placeholder="Tu nombre" required />
+        <input name="email" type="email" class="p-3 border rounded-md bg-white" placeholder="Tu email" required />
+        <textarea name="message" class="p-3 border rounded-md bg-white" rows="5" placeholder="Mensaje" required></textarea>
+        <div>
+          <button type="submit" class="px-4 py-2 bg-brand rounded-md">Enviar mensaje</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="mt-16 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto px-6 py-6 text-sm text-muted">© 2025 Juan Pérez — Full Stack Developer</div>
+  </footer>
 </body>
+  <script src="./script.js"></script>
+</html>
 </html>
