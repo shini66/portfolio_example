@@ -1,0 +1,29 @@
+{
+  "name": "dark-porfilio",
+  "version": "1.0.0",
+  "description": "Portafolio solo en modo oscuro",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
+    "build": "tailwindcss -i ./src/style.css -o ./dist/style.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shini66/dark-porfilio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shini66/dark-porfilio/issues"
+  },
+  "homepage": "https://github.com/shini66/dark-porfilio#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.0.0"
+  }
+}
